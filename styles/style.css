@@ -1,0 +1,159 @@
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Montserrat Regular"), local("Montserrat-Regular"),
+    url("../fonts/montserrat-v14-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v14-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  src: local("Montserrat Bold"), local("Montserrat-Bold"),
+    url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/montserrat-v14-latin-700.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Noto Serif";
+  font-style: italic;
+  font-weight: 400;
+  src: local("Noto Serif Italic"), local("NotoSerif-Italic"),
+    url("../fonts/noto-serif-v8-latin-italic.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/noto-serif-v8-latin-italic.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+@font-face {
+  font-family: "Roboto Slab";
+  font-style: normal;
+  font-weight: 400;
+  src: local(""),
+    url("../fonts/roboto-slab-v11-latin-regular.woff2") format("woff2"),
+    /* Chrome 26+, Opera 23+, Firefox 39+ */
+      url("../fonts/roboto-slab-v11-latin-regular.woff") format("woff");
+  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+:root {
+  --main-font: "Montserrat";
+  --second-font: "Roboto Slab";
+  --third-font: "Noto Serif";
+  --forth-font: "";
+  --font-color: #222;
+  --second-font-color: #bbb;
+  --third-font-color: #fed136;
+  --forth-font-color: #777;
+}
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+a {
+  text-decoration: none;
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 940px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+img {
+  min-width: 100%;
+  height: auto;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+
+header {
+  padding: 44px 0 104px;
+}
+
+.navigation ul {
+  width: 484px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-family: ;
+  font-size: 1.62em;
+  line-height: 2.56em;
+  color: var(--third-font-color);
+  letter-spacing: 0.05em;
+}
+
+.navigation-list a {
+  font-family: var(--main-font);
+  font-size: 0.88em;
+  line-height: 2.56em;
+  color: var(--main-font-color);
+  text-transform: uppercase;
+}
+
+.navigation-list a:hover {
+  color: var(--third-font-color);
+}
+
+.services-title {
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 75px;
+  color: var(--main-font-color);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  margin: 0 0 7px;
+}
+
+.services-title-paragraph {
+  font-family: var(--third-font);
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.2;
+  color: var(--forth-font-color);
+  margin: 0;
+}
+
+.services-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon-basket::before {
+  content: "";
+  background-image: url(../images/icon-basket.png);
+  display: block;
+  width: 40px;
+  height: 40px;
+}
