@@ -4,9 +4,7 @@
   font-weight: 400;
   src: local("Montserrat Regular"), local("Montserrat-Regular"),
     url("../fonts/montserrat-v14-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/montserrat-v14-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../fonts/montserrat-v14-latin-regular.woff") format("woff");
 }
 
 @font-face {
@@ -15,9 +13,7 @@
   font-weight: 700;
   src: local("Montserrat Bold"), local("Montserrat-Bold"),
     url("../fonts/montserrat-v14-latin-700.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/montserrat-v14-latin-700.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../fonts/montserrat-v14-latin-700.woff") format("woff");
 }
 
 @font-face {
@@ -26,9 +22,7 @@
   font-weight: 400;
   src: local("Noto Serif Italic"), local("NotoSerif-Italic"),
     url("../fonts/noto-serif-v8-latin-italic.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/noto-serif-v8-latin-italic.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../fonts/noto-serif-v8-latin-italic.woff") format("woff");
 }
 
 @font-face {
@@ -37,9 +31,16 @@
   font-weight: 400;
   src: local(""),
     url("../fonts/roboto-slab-v11-latin-regular.woff2") format("woff2"),
-    /* Chrome 26+, Opera 23+, Firefox 39+ */
-      url("../fonts/roboto-slab-v11-latin-regular.woff") format("woff");
-  /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    url("../fonts/roboto-slab-v11-latin-regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: "Charm";
+  font-style: normal;
+  font-weight: 400;
+  src: local("Charm Regular"), local("Charm-Regular"),
+    url("../fonts/charm-v4-latin-regular.woff2") format("woff2"),
+    url("../fonts/charm-v4-latin-regular.woff") format("woff");
 }
 
 :root {
@@ -106,8 +107,8 @@ header {
 }
 
 .logo {
-  font-family: ;
-  font-size: 1.62em;
+  font-family: "Charm";
+  font-size: 1.625em;
   line-height: 2.56em;
   color: var(--third-font-color);
   letter-spacing: 0.05em;
@@ -130,7 +131,7 @@ header {
   font-weight: 700;
   font-size: 2.5em;
   line-height: 75px;
-  color: var(--main-font-color);
+  color: var(--font-color);
   letter-spacing: -0.025em;
   text-transform: uppercase;
   margin: 0 0 7px;
@@ -148,12 +149,158 @@ header {
 .services-list {
   display: flex;
   justify-content: space-between;
+  flex-basis: 290px;
+}
+
+.services-list-item {
+  position: relative;
+}
+
+.services-list-item::before {
+  content: "";
+  display: block;
+  background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  background-position: center;
+  position: absolute;
+  left: 50%;
+  top: 80px;
+  transform: translateX(-50%);
+  border: 3px solid rgb(254, 209, 54);
+  border-radius: 50%;
 }
 
 .icon-basket::before {
-  content: "";
   background-image: url(../images/icon-basket.png);
-  display: block;
-  width: 40px;
-  height: 40px;
+}
+
+.icon-laptop::before {
+  background-image: url(../images/icon-laptop.png);
+}
+
+.icon-locked::before {
+  background-image: url(../images/icon-locked.png);
+}
+
+.services-list-item-description {
+  margin: 152px 0 22px;
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 1.125em;
+  line-height: 75px;
+  color: var(--font-color);
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+}
+
+.services-list-item-paragraph {
+  font-family: var(--second-font);
+  font-size: 0.875em;
+  line-height: 16px;
+  color: var(--forth-font-color);
+  letter-spacing: -0.025em;
+  margin: 0;
+}
+
+.services {
+  padding-bottom: 122px;
+}
+
+.contact {
+  background-color: rgb(34, 34, 34);
+  position: relative;
+  width: 100%;
+  padding: 106px 0 114px;
+}
+
+.contact-background-image {
+  background-image: url(../images/map-image.png);
+  background-position: right 0 bottom 20px;
+  position: absolute;
+  background-repeat: no-repeat;
+}
+
+.contact-title {
+  font-family: var(--main-font);
+  font-weight: 700;
+  font-size: 2.5em;
+  line-height: 48px;
+  color: #fff;
+  letter-spacing: -0.025em;
+  text-transform: uppercase;
+  margin: 0 0 23px;
+}
+
+.contact-title-paragraph {
+  font-family: var(--third-font);
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.2;
+  color: var(--forth-font-color);
+  margin: 0 0 78px;
+}
+
+.form-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-info input {
+  min-width: 455px;
+  height: 52px;
+}
+
+.form-info li:not(:last-child) {
+  margin-bottom: 28px;
+}
+
+.form-info textarea {
+  padding-top: 18px;
+  height: 212px;
+  resize: none;
+}
+
+.contact-form-text {
+  flex-basis: 455px;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  padding-left: 20px;
+  font-family: var(--second-font);
+  color: var(--forth-font-color);
+  font-size: 0.875em;
+  line-height: 1em;
+  letter-spacing: -0.025em;
+  font-weight: 700;
+}
+
+.contact-form-text::placeholder {
+  text-transform: uppercase;
+  color: var(--second-font-color);
+}
+
+.form-info-btn {
+  border-radius: 3px;
+  background-color: var(--third-font-color);
+  width: 240px;
+  height: 66px;
+  border: none;
+  margin-top: 28px;
+  font-size: 1.125em;
+  line-height: 1.375em;
+  font-family: var(--main-font);
+  color: rgb(255, 255, 255);
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.contact-form-text:required:focus:valid {
+  border-color: green;
+  outline: none;
+}
+
+.contact-form-text:required:focus:invalid:not(:placeholder-shown) {
+  border-color: red;
+  outline: none;
 }
